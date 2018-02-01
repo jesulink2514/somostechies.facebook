@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomosTechies.Facebook", "SomosTechies.Facebook\SomosTechies.Facebook.csproj", "{9805D869-D96F-4A0D-B3F9-BB4346A717CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomosTechies.Facebook.Android", "SomosTechies.Facebook.Android\SomosTechies.Facebook.Android.csproj", "{C48A43BB-516B-4152-BB60-1C0B3A01CF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomosTechies.Facebook.iOS", "SomosTechies.Facebook.iOS\SomosTechies.Facebook.iOS.csproj", "{AE7FC083-66CA-43DA-AEA6-740A06D27665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{9805D869-D96F-4A0D-B3F9-BB4346A717CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9805D869-D96F-4A0D-B3F9-BB4346A717CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9805D869-D96F-4A0D-B3F9-BB4346A717CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C48A43BB-516B-4152-BB60-1C0B3A01CF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C48A43BB-516B-4152-BB60-1C0B3A01CF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C48A43BB-516B-4152-BB60-1C0B3A01CF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C48A43BB-516B-4152-BB60-1C0B3A01CF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7FC083-66CA-43DA-AEA6-740A06D27665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7FC083-66CA-43DA-AEA6-740A06D27665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7FC083-66CA-43DA-AEA6-740A06D27665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7FC083-66CA-43DA-AEA6-740A06D27665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
