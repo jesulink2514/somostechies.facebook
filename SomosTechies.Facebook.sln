@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomosTechies.Facebook", "SomosTechies.Facebook\SomosTechies.Facebook.csproj", "{9805D869-D96F-4A0D-B3F9-BB4346A717CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SomosTechies.Facebook", "SomosTechies.Facebook\SomosTechies.Facebook.csproj", "{9805D869-D96F-4A0D-B3F9-BB4346A717CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomosTechies.Facebook.Android", "SomosTechies.Facebook.Android\SomosTechies.Facebook.Android.csproj", "{C48A43BB-516B-4152-BB60-1C0B3A01CF82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomosTechies.Facebook.iOS", "SomosTechies.Facebook.iOS\SomosTechies.Facebook.iOS.csproj", "{AE7FC083-66CA-43DA-AEA6-740A06D27665}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C87C4CA0-41AA-4B57-AD81-B0D526DDEA6E}"
+	ProjectSection(SolutionItems) = preProject
+		SomosTechies.Facebook.nuspec = SomosTechies.Facebook.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

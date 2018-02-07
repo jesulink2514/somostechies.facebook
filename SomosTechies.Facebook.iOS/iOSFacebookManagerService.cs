@@ -9,6 +9,7 @@ using UIKit;
 namespace SomosTechies.Facebook.iOS
 {
     public class iOSFacebookManagerService : IFacebookManagerService
+#pragma warning restore IDE1006 // Naming Styles
     {
         public Action<FacebookUser, string> _onLoginComplete;
 
