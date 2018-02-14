@@ -3,7 +3,7 @@ Make Native Facebook Login easy including a Service with Task based methods for 
 
 ## Documentation
 
-//TODO: Work in progress
+You can check the [Wiki](https://github.com/jesulink2514/somostechies.facebook/wiki).
 
 ### NuGet
 * Available on NuGet: [somostechies.facebook](http://www.nuget.org/packages/Xam.Plugin.Geolocator) [![NuGet](https://img.shields.io/nuget/v/somostechies.facebook.svg?label=NuGet)](https://www.nuget.org/packages/somostechies.facebook/)
