@@ -10,15 +10,18 @@ using System.Threading.Tasks;
 namespace SomosTechies.Facebook.Android
 {
 
-    public class AndroidFacebookManagerServiceService : Java.Lang.Object, IFacebookManagerService, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
+    public class AndroidFacebookManagerService : Java.Lang.Object, IFacebookManagerService, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
-        private readonly Func<Activity> _currentActivityDelegate;
-        public Action<FacebookUser, string> OnLoginComplete;
+        private static Func<Activity> _currentActivityDelegate;
         public ICallbackManager CallbackManager;
 
-        public AndroidFacebookManagerServiceService(Func<Activity> currentActivityDelegate)
+        public static void Init(Func<Activity> currentActivityDelegate)
         {
             _currentActivityDelegate = currentActivityDelegate;
+        }
+
+        public AndroidFacebookManagerService()
+        {
             CallbackManager = CallbackManagerFactory.Create();
             LoginManager.Instance.RegisterCallback(CallbackManager, this);
         }
@@ -39,16 +42,20 @@ namespace SomosTechies.Facebook.Android
                 request.Parameters = bundle;
                 request.ExecuteAsync();
             }
+            else
+            {
+                _loginTaskCompletionSource.SetCanceled();
+            }
         }
 
         public void OnCancel()
         {
-            OnLoginComplete?.Invoke(null, "Canceled!");
+            _loginTaskCompletionSource.SetResult(new FacebookLoginResponse(false,null,"Canceled."));
         }
 
         public void OnError(FacebookException error)
         {
-            var r = new FacebookLoginResponse(false,null,error.Message);
+            var r = new FacebookLoginResponse(false,null,error?.Message);
             _loginTaskCompletionSource.SetResult(r);
         }
         public void OnCompleted(JSONObject p0, GraphResponse p1)

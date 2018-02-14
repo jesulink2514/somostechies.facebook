@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata>
     <id>somostechies.facebook</id>
-    <version>1.1.0</version>
+    <version>1.2.1</version>
     <description>
       Native Facebook Login for Xamarin.Forms
     </description>
@@ -37,7 +37,9 @@
   </metadata>
   <files>
     <file src="bin/netstandard2.0/SomosTechies.Facebook.dll" target="lib\netstandard2.0" />
+    <file src="bin/netstandard2.0/SomosTechies.Facebook.dll" target="lib\MonoAndroid70" />
     <file src="bin/Release/SomosTechies.Facebook.Android.dll" target="lib\MonoAndroid70" />
+    <file src="bin/netstandard2.0/SomosTechies.Facebook.dll" target="lib\Xamarin.iOS10" />
     <file src="bin/Release/SomosTechies.Facebook.iOS.dll" target="lib\Xamarin.iOS10" />
   </files>
 </package>
