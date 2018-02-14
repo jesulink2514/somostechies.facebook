@@ -2,10 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata>
     <id>somostechies.facebook</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <description>
       Native Facebook Login for Xamarin.Forms
     </description>
+    <iconUrl>https://github.com/jesulink2514/somostechies.facebook/raw/master/logo.png</iconUrl>
     <authors>Jesus Angulo</authors>
     <projectUrl>https://github.com/jesulink2514/somostechies.facebook</projectUrl>
 

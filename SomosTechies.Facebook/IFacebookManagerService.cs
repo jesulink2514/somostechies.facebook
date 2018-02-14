@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace SomosTechies.Facebook
 {
     public interface IFacebookManagerService
     {
-        void Login(Action<FacebookUser, string> onLoginComplete);
+        Task<FacebookLoginResponse> Login();
 
         void Logout();
     }

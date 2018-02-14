@@ -4,6 +4,8 @@ using Android.App;
 using Org.Json;
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
+using SomosTechies.Facebook;
+using System.Threading.Tasks;
 
 namespace SomosTechies.Facebook.Android
 {
@@ -19,13 +21,6 @@ namespace SomosTechies.Facebook.Android
             _currentActivityDelegate = currentActivityDelegate;
             CallbackManager = CallbackManagerFactory.Create();
             LoginManager.Instance.RegisterCallback(CallbackManager, this);
-        }
-
-        public void Login(Action<FacebookUser, string> onLoginComplete)
-        {
-            OnLoginComplete = onLoginComplete;
-            LoginManager.Instance.SetLoginBehavior(LoginBehavior.NativeWithFallback);
-            LoginManager.Instance.LogInWithReadPermissions(_currentActivityDelegate(), new List<string> { "public_profile", "email" });
         }
 
         public void Logout()
@@ -53,7 +48,8 @@ namespace SomosTechies.Facebook.Android
 
         public void OnError(FacebookException error)
         {
-            OnLoginComplete?.Invoke(null, error.Message);
+            var r = new FacebookLoginResponse(false,null,error.Message);
+            _loginTaskCompletionSource.SetResult(r);
         }
         public void OnCompleted(JSONObject p0, GraphResponse p1)
         {
@@ -88,7 +84,20 @@ namespace SomosTechies.Facebook.Android
                 }
             }
 
-            OnLoginComplete?.Invoke(new FacebookUser(id, AccessToken.CurrentAccessToken.Token, firstName, lastName, email, pictureUrl), string.Empty);
+            var user = new FacebookUser(id, AccessToken.CurrentAccessToken.Token, firstName, lastName, email,pictureUrl);
+            var res = new FacebookLoginResponse(true,user,string.Empty);
+            _loginTaskCompletionSource.SetResult(res);
+        }
+
+        private TaskCompletionSource<FacebookLoginResponse> _loginTaskCompletionSource;
+        public Task<FacebookLoginResponse> Login()
+        {
+            _loginTaskCompletionSource = new TaskCompletionSource<FacebookLoginResponse>();
+
+            LoginManager.Instance.SetLoginBehavior(LoginBehavior.NativeWithFallback);
+            LoginManager.Instance.LogInWithReadPermissions(_currentActivityDelegate(), new List<string> { "public_profile", "email" });
+
+            return _loginTaskCompletionSource.Task;
         }
         #endregion
     }
